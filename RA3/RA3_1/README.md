@@ -1,11 +1,14 @@
 # RA3_1
 
-Introduction [INTRO](URL_TASKS) :
 
-# Tasks
+# Apache Hardeninng
+A aquesta pràctica és faràn 4 contenidors amb docker: 
+    1. CSP + HSTS(./1_CSP)
+    2. Web Application Firewall (WAF)
+    3. OWASP
+    4. Evitar DDOS
 
-* [TASK_1](#URL_TASK_1): XXX
-* [TASK_2](#URL_TASK_2): XXX
+
 
 # Task_1
 
