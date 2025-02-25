@@ -1,12 +1,30 @@
-# HSTS
-### Que és?
+# Configuracions previes
+
+## Llevar informació del servidor inecessaria
+*/etc/apache2/apache2.conf*
+``` 
+ServerTokens ProductOnly
+ServerSignature Off
+```
+## També deshabilitarem el mòdul autoindex
+```
+RUN a2dismod -f autoindex
+```
+
+
+## HSTS
+#### Que és?
 HSTS és com se li denomina a l'estàndard de l'[IETF](https://ca.wikipedia.org/wiki/Internet_Engineering_Task_Force) 
 especificat al [RFC 6797](https://datatracker.ietf.org/doc/html/rfc6797)
 
 Aquest estàndard **obliga** a que totes les comunicacions client/servidor
 utilitzen una **conexió segura** sobre [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). 
 
-# CSP
+
+# Exercici demanat
+
+## CSP
+
 ### Que és?
 Una capa de seguretat que ajuda a previndre
 i mitigar certs tipus d'atacs com:
@@ -18,6 +36,7 @@ i mitigar certs tipus d'atacs com:
 Mijançant les capçaleres del protocol http. S'ha dafegir a la
 configuració:
 
+*/etc/apache2/apache2.conf*
 ```
 Header set Content-Security-Policy 
 	default-src 'self'; 
