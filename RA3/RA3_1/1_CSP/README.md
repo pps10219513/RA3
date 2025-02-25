@@ -18,12 +18,11 @@ i mitigar certs tipus d'atacs com:
 Mijançant les capçaleres del protocol http. S'ha dafegir a la
 configuració:
 
-'
+```
 Header set Content-Security-Policy 
 	default-src 'self'; 
 	img-src *; 
 	media-src media1.com media2.com; 
 	script-src userscripts.example.com
-'
-
+```
 
