@@ -1,6 +1,6 @@
 # RA3
 
-Exploration of the ...
+## Aquest repositori tindrà els exercicis d'aquest RA...
 
 Includes the following:
 * [RA3_1](#TODO):
