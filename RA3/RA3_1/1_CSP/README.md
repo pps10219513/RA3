@@ -1,20 +1,32 @@
-# Configuracions previes de l'escenari
+# Configuracions previes a l'exercici 
 ---
-## Llevar informació del servidor a les capçaleres 
+## Llevar la capçalera que porta l'informació del servidor
 */etc/apache2/apache2.conf*
 ``` 
 ServerTokens ProductOnly
 ```
-| Com era abans | Com es ara|
+| Com era abans | Com és ara|
 | ----------- | ----------- |
-|![deuries estar mirant una foto de capçaleres amb informació d'apache2](./images/pre_ServerTokes.png) | Title |
+|![deuries estar mirant una foto de capçaleres amb informació d'apache2](./images/pre_ServerTokens.png) | ![deuries estar mirant una foto de les capçaleres i vore que no hi ha cap que aporte informació de l'apache](./images/post_ServerTokens.png)  |
 
-
+## Llevar l'informació de la versió d'apache en la pàgina d'error 
+*/etc/apache2/apache2.conf*
+``` 
 ServerSignature Off
-## També deshabilitarem el mòdul autoindex per no poder llistar fitxers
+```
+| Com era abans | Com és ara|
+| ----------- | ----------- |
+|![deuries estar mirant una foto de capçaleres amb informació d'apache2](./images/pre_ServerSignature.png) | ![deuries estar mirant una foto de les capçaleres i vore que no hi ha cap que aporte informació de l'apache](./images/post_ServerSignature.png)  |
+
+
+## També deshabilitarem el mòdul autoindex per no poder llistar fitxers quan no hi ha un index.html
 ```
 RUN a2dismod -f autoindex
 ```
+| Com era abans | Com és ara|
+| ----------- | ----------- |
+|![amb indexof](./images/pre_indexof.png) | ![sense indexof](./images/post_indexof.png)  |
+
 
 ## HSTS
 #### Que és?
@@ -33,6 +45,10 @@ Ara ja podem afegir el HSTS al nostre virtual-host.
 ```
 Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
 ```
+| Com era abans | Com és ara|
+| ----------- | ----------- |
+|![capçalera hsts](./images/pre_hsts.png) | ![sense indexof](./images/post_hsts.png)  |
+
 ---
 
 
