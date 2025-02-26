@@ -62,9 +62,10 @@ i mitigar certs tipus d'atacs com:
 
 
 ## Com s'aconsegueix
-Mijançant les capçaleres del protocol http. Per continuar (i tindre la capacitat
-de comprobar els següents metòdes de securització) farem ús del condicionals 
-en la configuració d'apache per tindre un sistema segur i un altre no segur.
+Mijançant les capçaleres del protocol http. Aquest estàndar afegeix la capçalera
+"Content-Security-Policy" on s'especifica d'on es poden carregar els recursos.
+Per continuar (i tindre la capacitat de comprobar els següents metòdes de securització) farem
+ús del condicionals en la configuració d'apache, per tindre un sistema segur i un altre no segur.
 Si s'accedeix mitjançant el domini localhost les web seràn vulnerables a atacs xss
 mentre que si s'accedeix mitjançant qualsevol altre domini no serà vulnerable.
 
@@ -79,6 +80,10 @@ configuració desenvolupada:
 </If>
 ```
 
+| Com era abans | Com és ara|
+| ----------- | ----------- |
+|![no capçalera csp](./images/pre_csp.png) | ![capçalera csp](./images/post_csp.png)  |
+
 Per últim hi ha que aclarar que els xss tan simples com el que hi ha al apach2/post.html els navegadors
 directament ja no els executen. Les especificacions d'HTML indiquen que els scripts afegits mitjançant innerHTML 
 o outerHTMl després del primer del primer parse no s'ha de carregar. Llavors per executar xss s'ha d'utilizar un altre
@@ -87,10 +92,6 @@ metòde que no siga <script></script>. Per exemple utilitzar onerror d'una imatg
 https://domini/archiu?search=<img src=x onerror=alert('XSS')>
 https://domini/archiu?search=<svg%20onload=alert('XSS')>
 ```
-| Com era abans | Com és ara|
-| ----------- | ----------- |
-|![no capçalera csp](./images/pre_csp.png) | ![capçalera csp](./images/post_csp.png)  |
-
 
 | Domini localhost| Domini alternatiu|
 | ----------- | ----------- |

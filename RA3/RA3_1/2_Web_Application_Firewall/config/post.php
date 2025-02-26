@@ -5,9 +5,6 @@
 <title>Post Vulnerable a XSS</title>
 </head>
 <body>
-<script>
-    alert("JavaScript está activo");
-</script>
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
 ?>
@@ -24,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 
 ?>
+
 </body>
 </html>
 
