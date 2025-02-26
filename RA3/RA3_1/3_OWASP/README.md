@@ -10,7 +10,7 @@ S'ha de clonar aquest [repositori](https://ca.wikipedia.org/wiki/Internet_Engine
 però s'ha de tindre en compte que el repositori porta
 des del 2020 archivat. 
 
-|Regles aplicades | Atac | Log|
+|Regles aplicades | Atac | Resultat |
 |--------- | ----------- | ----------- |
-| - [ ] |![atac xss](./images/xss.png) | ![pre_regles](./images/pre.png)  |
+| - [  ] |![atac xss](./images/xss.png) | ![pre_regles](./images/pre.png)  |
 | - [ :ballot_box_with_check: ] |![atac xss](./images/xss.png) | ![post_regles](./images/post.png)  |
