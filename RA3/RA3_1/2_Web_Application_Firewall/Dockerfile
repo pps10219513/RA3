@@ -1,4 +1,4 @@
-FROM pps10219513/apache:1
+FROM pps10219513/ra3.1:CSP
 
 # Instal·lem els paquets necessaris
 RUN apt update && apt install -y php libapache2-mod-security2 

@@ -1,26 +1,12 @@
-# CSP
-### Que és?
-Una capa de seguretat que ajuda a previndre
-i mitigar certs tipus d'atacs com:
-    - XSS
-    - Injecció de dades
+# Evitar DDOS
+### Com és fa?
+Activar el mòdul evasive de apache2
 
-
-### Com s'aconsegueix
-Mijançant les capçaleres http. S'ha dafegir a la
-configuració:
 '''
-Header set Content-Security-Policy \
-	default-src 'self'; \
-	img-src *; \
-	media-src media1.com media2.com; \
-	script-src userscripts.example.com
+RUN apt install -y libapache2-mod-evasive
+RUN a2enmod evasive
 '''
-
-# HSTS
-### Que és?
-HSTS és com se li denomina a l'estàndard de l'![IETF](https://ca.wikipedia.org/wiki/Internet_Engineering_Task_Force) 
-especificat al ![RFC 6797](https://datatracker.ietf.org/doc/html/rfc6797)
-
-Aquest estàndard obliga a que totes les comunicacions client/servidor
-utilitzen una conexió segura sobre ![TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). 
+| Versió del contenidor | Atac | 
+|--------- | ----------- |
+| - [ OWASP ](https://hub.docker.com/layers/pps10219513/ra3.1/OWASP/images/sha256-c1ff14fa967e15d79ab19e6c550c6fad8cca9bbf46d81f9e1a6647d181b54e30) |![atac](./images/owasp.png) |
+| - [ DDOS ](https://hub.docker.com/layers/pps10219513/ra3.1/DDOS/images/sha256-26ad0e91819a6e9b7de17420a068d343ca81995ef11c109d8ed78abc699e8b10) |![atac](./images/ddos.png) |
