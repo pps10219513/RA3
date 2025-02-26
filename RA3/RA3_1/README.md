@@ -1,5 +1,15 @@
 # RA3_1
 
+### Executar els contenidors
+```
+docker run -p 80:80 -p 443:443 pps10219513/ra3.1:TAG
+```
+Escollir un tag dels següents:  
+- CSP
+- WAF
+- OWASP
+- DDOS
+
 Aquesta pràctica consisteix en securitzar un servidor apache2.
 Per dur a terme aquesta tasca és faràn 4 contenidors amb docker,
 un per cada mesura implementada. A continuació els contenidors:
