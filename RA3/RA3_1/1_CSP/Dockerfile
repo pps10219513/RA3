@@ -13,6 +13,10 @@ RUN a2enmod headers
 COPY apache2/sites-enabled /etc/apache2/sites-enabled
 COPY apache2/apache2.conf /etc/apache2/apache2.conf
 
+# WEB vulnerable a xss
+COPY apache2/post.html /var/www/html/
+
 EXPOSE 80 443
+
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 

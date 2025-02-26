@@ -62,15 +62,38 @@ i mitigar certs tipus d'atacs com:
 
 
 ## Com s'aconsegueix
-Mijançant les capçaleres del protocol http. S'ha dafegir a la
-configuració:
+Mijançant les capçaleres del protocol http. Per continuar (i tindre la capacitat
+de comprobar els següents metòdes de securització) farem ús del condicionals 
+en la configuració d'apache per tindre un sistema segur i un altre no segur.
+Si s'accedeix mitjançant el domini localhost les web seràn vulnerables a atacs xss
+mentre que si s'accedeix mitjançant qualsevol altre domini no serà vulnerable.
 
+configuració desenvolupada:
 */etc/apache2/apache2.conf*
 ```
-Header set Content-Security-Policy "default-src 'self'; img-src 'self'; media-src 'self'; script-src 'self'"
+<If "%{HTTP_HOST} == 'localhost'">
+    Header set Content-Security-Policy "default-src https://localhost; script-src * 'unsafe-inline'"
+</If>
+<If "%{HTTP_HOST} == '192.168.1.201'">
+    Header set Content-Security-Policy "default-src https://192.168.1.201; script-src 'none'"
+</If>
+```
+
+Per últim hi ha que aclarar que els xss tan simples com el que hi ha al apach2/post.html els navegadors
+directament ja no els executen. Les especificacions d'HTML indiquen que els scripts afegits mitjançant innerHTML 
+o outerHTMl després del primer del primer parse no s'ha de carregar. Llavors per executar xss s'ha d'utilizar un altre
+metòde que no siga <script></script>. Per exemple utilitzar onerror d'una imatge o onload d'un svg
+```
+https://domini/archiu?search=<img src=x onerror=alert('XSS')>
+https://domini/archiu?search=<svg%20onload=alert('XSS')>
 ```
 | Com era abans | Com és ara|
 | ----------- | ----------- |
 |![no capçalera csp](./images/pre_csp.png) | ![capçalera csp](./images/post_csp.png)  |
+
+
+| Domini localhost| Domini alternatiu|
+| ----------- | ----------- |
+|![no capçalera csp](./images/csp_localhost.png) | ![capçalera csp](./images/csp_alternatiu.png)  |
 
 
