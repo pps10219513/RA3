@@ -1,26 +1,16 @@
-# CSP
-### Que és?
-Una capa de seguretat que ajuda a previndre
-i mitigar certs tipus d'atacs com:
-    - XSS
-    - Injecció de dades
+# Que són les regles OWASP?
+Les regles OWASP de ModSecurity són un conjunt de directrius basades en el OWASP
+Core Rule Set, dissenyades per detectar i bloquejar atacs comuns a aplicacions web.
+Aquestes regles utilitzen patrons per identificar vulnerabilitats com
+injeccions SQL i cross-site scripting analitzant el tràfic HTTP.
 
+### Com s'apliquen?
 
-### Com s'aconsegueix
-Mijançant les capçaleres http. S'ha dafegir a la
-configuració:
-'''
-Header set Content-Security-Policy \
-	default-src 'self'; \
-	img-src *; \
-	media-src media1.com media2.com; \
-	script-src userscripts.example.com
-'''
+S'ha de clonar aquest [repositori](https://ca.wikipedia.org/wiki/Internet_Engineering_Task_Force)
+però s'ha de tindre en compte que el repositori porta
+des del 2020 archivat. 
 
-# HSTS
-### Que és?
-HSTS és com se li denomina a l'estàndard de l'![IETF](https://ca.wikipedia.org/wiki/Internet_Engineering_Task_Force) 
-especificat al ![RFC 6797](https://datatracker.ietf.org/doc/html/rfc6797)
-
-Aquest estàndard obliga a que totes les comunicacions client/servidor
-utilitzen una conexió segura sobre ![TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security). 
+|Regles aplicades | Atac | Log|
+| | ----------- | ----------- |
+| |![atac xss](./images/xss.png) | ![log](./images/pre.png)  |
+|:heavy_check_mark: |![atac xss](./images/xss.png) | ![po](./images/post.png)  |
