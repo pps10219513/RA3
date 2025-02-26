@@ -1,0 +1,29 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	return 301 https://$host$request_uri;
+	server_name _;
+	location / {
+		autoindex off;
+		try_files $uri $uri/ =404;
+	}
+}
+server {
+	listen 443 ssl;
+	server_name localhost;
+	add_header Content-Security-Policy "default-src 'self'; img-src *;" always;
+	ssl_certificate /etc/nginx/certs/server.pem;
+	ssl_certificate_key /etc/nginx/certs/server.key;
+	add_header Strict-Transport-Security "max-age=63072000; includeSubDomains" always;
+    	ssl_protocols TLSv1.2 TLSv1.3;
+    	ssl_ciphers HIGH:!aNULL:!MD5;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+	location / {
+		limit_conn conn_limit_per_ip 10;
+		limit_req zone=req_limit_per_ip burst=5;
+		autoindex off;
+		try_files $uri $uri/ =404;
+	}
+}

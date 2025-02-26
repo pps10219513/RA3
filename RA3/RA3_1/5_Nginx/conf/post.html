@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de XSS</title>
+</head>
+<body>
+  <h1>Demostración de XSS</h1>
+  <!-- Formulario que envía la entrada por query string (GET) -->
+  <form action="" method="GET">
+    <label for="search">Buscar:</label>
+    <input type="text" id="search" name="search" />
+    <button type="submit">Enviar</button>
+  </form>
+  <div id="resultado"></div>
+  <script>
+    <!-- 1. Obtenemos el parámetro 'search' de la URL.-->
+    const params = new URLSearchParams(window.location.search);
+    <!-- . Si existe 'search', se inyecta directamente en el div #resultado usando innerHTML. -->
+    <!-- IMPORTANT -->
+    <!-- IMPORTANT -->
+    <!-- Els navegadors son molt fills de puta i ho tenen tot pensat, llavors -->
+    <!-- no es pot utilitzar només <script>alert();</script> -->
+    <!-- açò no carrèga l'script. S'ha d'utilitzar algo diferent -->
+    <!-- com:  https://localhost/post.html?search=<img src=x onerror=alert('XSS')> -->
+    if (params.has('search')) {
+      document.getElementById('resultado').innerHTML = 
+        "Has buscado: " + params.get('search');
+    }
+  </script>
+</body>
+</html>
+
