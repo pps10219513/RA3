@@ -6,7 +6,7 @@ injeccions SQL i cross-site scripting analitzant el tràfic HTTP.
 
 ### Com s'apliquen?
 
-S'ha de clonar aquest [repositori](https://ca.wikipedia.org/wiki/Internet_Engineering_Task_Force)
+S'ha de clonar aquest [repositori](https://github.com/SpiderLabs/owasp-modsecurity-crs.git)
 però s'ha de tindre en compte que el repositori porta
 des del 2020 archivat. 
 
