@@ -13,4 +13,4 @@ des del 2020 archivat.
 |Regles aplicades | Atac | Log|
 |--------- | ----------- | ----------- |
 | - [ ] |![atac xss](./images/xss.png) | ![pre_regles](./images/pre.png)  |
-| - [:ballot_box_with_check:] |![atac xss](./images/xss.png) | ![post_regles](./images/post.png)  |
+| - [ :ballot_box_with_check: ] |![atac xss](./images/xss.png) | ![post_regles](./images/post.png)  |
