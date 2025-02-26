@@ -11,6 +11,6 @@ però s'ha de tindre en compte que el repositori porta
 des del 2020 archivat. 
 
 |Regles aplicades | Atac | Log|
-| | ----------- | ----------- |
-| |![atac xss](./images/xss.png) | ![log](./images/pre.png)  |
-|:heavy_check_mark: |![atac xss](./images/xss.png) | ![po](./images/post.png)  |
+|--------- | ----------- | ----------- |
+| - [ ] |![atac xss](./images/xss.png) | ![pre_regles](./images/pre.png)  |
+| - [x] |![atac xss](./images/xss.png) | ![post_regles](./images/post.png)  |
