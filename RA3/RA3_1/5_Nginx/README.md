@@ -11,7 +11,7 @@ http {
 ```
 | Com era abans | Com és ara|
 | ----------- | ----------- |
-|![deuries estar mirant una foto de capçaleres amb informació d'nginx](./images/ServerTokensOn.png) | ![deuries estar mirant una foto de les capçaleres i vore que no hi ha cap que aporte informació de l'apache](./images/ServerTokensOff.png)  |
+|![deuries estar mirant una foto de capçaleres amb informació d'nginx](./images/ServerTokensOff.png) | ![deuries estar mirant una foto de les capçaleres i vore que no hi ha cap que aporte informació de l'apache](./images/ServerTokensOn.png)  |
 
 
 #### També deshabilitarem l'autoindex per no poder llistar fitxers quan no hi ha un index.html
